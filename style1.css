@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+
+    height: 100vh;
+overflow-y: auto;
+overflow-x: hidden;
+
+background-color: aqua;
+display: grid;
+height: 700px;
+width: 512px;
+border:solid black 2px;
+grid-template-rows: 50px 1fr 50px;
+grid-template-columns: 100px 400px 100px;
+grid-template-areas: "hd hd"
+"side main  "
+"ft ft ";
+grid-gap: 4px;
+}
+.box{
+    border: 5px solid green;
+    background-color: crimson;
+
+}
+.box:hover{
+    transform: scale(1.033);
+    filter: drop-shadow(0 0 10px #333);
+    transition: 0.3s;;
+}
+#header{
+    grid-area: hd;
+}
+#footer{
+    grid-area: ft;
+}
+#sidebar{
+    grid-area: side;
+}
+#content{
+    grid-area: main;
+}
+@media(max-width:500px){
+    .container{
+
+        grid-template-rows: 50px 1fr 1fr 50px;
+        grid-template-columns: 1fr;
+        grid-template-areas: "hd"
+        "side"
+        "main"
+        "ft";
+        grid-gap: 2px;
+        }
+}
+.childgrid{
+    height: 100%;
+    width: 100%;
+display: grid;
+grid-template-columns: repeat(2,1fr);
+grid-template-rows: repeat(2,1fr);
+grid-gap: 4px;
+}
+.element{
+    border: solid black 2px;
+    background-color: yellow;
+}
+.container2{
+height: 300px;
+width: 1400px;
+background-color: aqua;
+margin-top: 40px;
+}
+.anima{
+    height: 100%;
+    width: 300px;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: satyam;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-timing-function:ease;
+animation-iteration-count: infinite;
+animation-direction: alternate-reverse;
+}
+@keyframes satyam {
+    0%{
+width:300px ;
+background-color: yellow;
+    }
+    30%{
+        width: 45%;
+        background-color: yellowgreen;
+    }
+    65%{
+        width: 75% ;
+        background-color: green;
+    }
+    100%{
+  width: 100%;
+  background-color: darkgreen;
+    }
+}
